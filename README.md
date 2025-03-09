@@ -62,16 +62,19 @@ Project Workflow
 2.	Comprehensive report with insights & recommendations.
 
 Handling Missing Data:
-3.	Implement strategies like mean/median imputation for numerical values.
-4.	Use mode imputation for categorical values.
-5.	Remove records with excessive missing values.
+.	Implement strategies like mean/median imputation for numerical values.
+.	Use mode imputation for categorical values.
+.	Remove records with excessive missing values.
 
 Exploratory Data Analysis (EDA) – HR Analytics
+
 EDA helps in understanding the dataset’s structure, distributions, and key patterns related to employee behavior, attrition, and performance.
 1. Data Overview:
 •	Loaded dataset using Pandas and checked its structure (df.info(), df.describe()).
 •	Identified missing valuess and handled them appropriately.
 •	Renamed columns for consistency.
+
+
 2. Employee Distribution Analysis:
 •	Department & Job Role: 
 o	Visualized employee count across departments using bar charts.
@@ -80,40 +83,54 @@ o	Identified departments with higher attrition rates.
 o	Used histograms and box plots to analyze age and salary spread.
 o	Detected salary discrepancies across job roles.
 
+
 3. Attrition Analysis:
 •	Attrition vs. Job Satisfaction & Work-Life Balance: 
 o	Employees with low job satisfaction and poor work-life balance showed higher attrition rates.
 o	Used box plots & count plots for visualization.
 •	Attrition vs. Salary & Tenure: 
 o	Employees with lower salaries and fewer years in the company had higher turnover.
+
+
 4. Correlation Analysis:
 •	Heatmap Visualization using Seaborn to find relationships between: 
 o	Job satisfaction, income, performance ratings, and attrition.
 o	Workload & tenure impact on employee retention.
-5. Performance & Engagement Analysis:
+6. Performance & Engagement Analysis:
 •	Training & Performance Trends: 
 o	Employees with more training hours generally had higher performance ratings.
 •	Promotion & Career Growth: 
 o	Employees with fewer promotions over time were more likely to leave.
 
+
+
 Analysis         
 Descriptive Analysis 
 	Descriptive Analysis Using Pandas and NumPy: 
 Computed summary statistics for numerical and categorical variables to understand data distribution. Converted numeric columns to appropriate types using pd.to_numeric() and categorized categorical columns using .astype('category'). Generated descriptive statistics for both data types. (Applied: df.describe() for numerical & categorical summaries, df.dtypes to check data types).
+
+
 	Categorical Variable Summary: 
 Analyzed unique value counts for all categorical columns to understand data diversity and distribution. (Applied: df[col].nunique() for counting unique values in categorical columns).
+
 
 Visualization of Employee Distribution
 	Visualization of Employee Distribution: Created bar charts to analyze the distribution of employees across departments. Used sb.countplot() to visualize employee counts, customized labels, and applied plt.xticks(rotation=45) for better readability. (Applied: sb.countplot() for bar chart, plt.grid(axis='y') for clarity).
 
+
 	Salary Distribution Analysis: Used a histogram to visualize the distribution of monthly income and detect skewness or outliers. Applied sb.histplot() with bins=30 and kde=True for smooth density estimation. (Applied: sb.histplot() for histogram visualization).
+
 
 Correlation Analysis
 	Correlation Analysis: 
 Computed the correlation matrix for numerical variables to identify relationships between key attributes. Used sb.heatmap() to visualize correlations with annotations and a color gradient for better interpretation. (Applied: df.corr() for correlation matrix, sb.heatmap() for visualization). 
+
+
 Atrition Analysis
 	Attrition Segmentation: 
 Analyzed job satisfaction, monthly income, and performance rating differences between employees who left and those who stayed. Used sb.boxplot() to compare distributions across attrition status. (Applied: sb.boxplot() for job satisfaction, income, and performance rating segmentation).
+
+
 	Attrition Trends Across Demographics:
  Calculated attrition rates for different demographic groups (age, gender, department, education, and job role) to identify high-risk categories. Used df.groupby() with a lambda function to compute attrition percentages and visualized trends using sb.barplot(). (Applied: calculate_attrition_rate() for computation, sb.barplot() for visualization).
 
